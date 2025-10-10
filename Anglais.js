@@ -1,6 +1,6 @@
 const mots = {
-  "A la fin des": "late",
-  "Au début des": "early",
+  "A la fin des...": "late",
+  "Au début des...": "early",
   "Jeunesse": "youth",
   "Valeurs": "values",
   "Règles": "rules",
@@ -92,19 +92,28 @@ function checkAnswer() {
 
   if (!stats[fr]) stats[fr] = { good: 0, bad: 0 };
 
+let timeout = 2000;
+
   if (rep === bonneRep) {
     feedback.textContent = "✅ Bonne réponse !";
     feedback.style.color = "limegreen";
     stats[fr].good++;
+    timeout = 2000;
+    
   } else {
     feedback.textContent = `❌ Mauvaise réponse. C'était "${bonneRep}".`;
     feedback.style.color = "darkred";
     stats[fr].bad++;
+    timeout = 4000;
   }
 
   renderStats();
   index++;
-  setTimeout(nextWord, 1000);
+  setTimeout(nextWord, 500);
+
+  setTimeout(() => {
+    feedback.textContent = "";
+  }, timeout);
 }
 
 function renderStats() {
