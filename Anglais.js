@@ -109,7 +109,7 @@ let timeout = 2000;
 
   renderStats();
   index++;
-  setTimeout(nextWord, 500);
+  setTimeout(nextWord, 2000);
 
   setTimeout(() => {
     feedback.textContent = "";
