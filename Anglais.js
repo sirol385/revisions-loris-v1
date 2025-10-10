@@ -92,7 +92,7 @@ function checkAnswer() {
 
   if (!stats[fr]) stats[fr] = { good: 0, bad: 0 };
 
-let timeout = 2000;
+let timeout = 1000;
 
   if (rep === bonneRep) {
     feedback.textContent = "✅ Bonne réponse !";
@@ -109,7 +109,7 @@ let timeout = 2000;
 
   renderStats();
   index++;
-  setTimeout(nextWord, 2000);
+  setTimeout(nextWord, 1000);
 
   setTimeout(() => {
     feedback.textContent = "";
