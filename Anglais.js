@@ -69,7 +69,7 @@ function nextWord() {
       index = 0;
       feedback.textContent = "On recommence les mots mals traduits 💪";
     } else {
-      feedback.textContent = "Bravo ! Tu as tout réussi ! 🎉";
+      feedback.textContent = "Bravo ! Tu as tout réussi 🎉";
       return;
     }
   }
