@@ -138,17 +138,93 @@ h1 {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     #game {
         flex-direction: column;
+        align-items: center;
+        gap: 0;
     }
-    
-    #word-stats, #quiz {
+    #word-stats,
+    #quiz {
         width: 100%;
+        max-width: 100%;
+        margin: 0 auto 20px auto;
+        box-sizing: border-box;
+        padding: 15px;
     }
-    
+    #quiz {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    #controls {
+        flex-direction: column;
+        gap: 10px;
+    }
     #mode, #start, #validate {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+        margin: 8px 0;
     }
+    #answer {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .back-button {
+        left: 10px;
+        top: 10px;
+        font-size: 1.2rem;
+        padding: 8px 10px;
+    }
+}
+
+/* Centrer le quiz quand word-stats est caché */
+#word-stats.hidden + #quiz {
+    margin: 0 auto;
+    width: 100%;
+    float: none;
+    display: block;
+    max-width: 500px;
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 500px) {
+    body {
+        padding: 5px;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    #quiz, #word-stats {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+    #mode, #start, #validate {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.7rem;
+    }
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.back-button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
